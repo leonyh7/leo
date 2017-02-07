@@ -1,8 +1,20 @@
-.tan{
+.tan {
     margin: 1em;
     width: 300px;
     height: 200px;
     float: left;
+}
+.square {
+    margin: 1em;
+    width: 300px;
+    height: 300px;
+    float: left;
+}
+.yellow {
+    background-color: #fb3;
+}
+.blue {
+    background-color: #58a;
 }
 .outline {
     border-radius: 1em;
@@ -12,7 +24,7 @@
     outline: 2px dashed white;
     outline-offset: -30px;
 }
-.border{
+.border {
     border-radius: 1em;
 
     background-color: grey;
@@ -20,35 +32,43 @@
     box-shadow: 0 0 0 .6em dodgerblue;
     outline: 1em solid dodgerblue;
 }
-.linear{
+.border-corner {
+    background: radial-gradient(circle at top left, transparent 15px, #58a 0) top left,
+                radial-gradient(circle at top right, transparent 15px, #58a 0) top right,
+                radial-gradient(circle at bottom right, transparent 15px, #58a 0) bottom right,
+                radial-gradient(circle at bottom left, transparent 15px, #58a 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+.linear {
     background: linear-gradient(#fb3 50%, #58a 50%);
     background-size: 100% 30px;
 }
-.linear2{
+.linear2 {
     background: linear-gradient(#fb3 33.3%, #58a 0, #58a 66.6%, yellowgreen 0);
     background-size: 100% 45px;
 }
-.linear3{
+.linear3 {
     background: linear-gradient(to right, #fb3 50%, #58a 50%);
     background-size: 45px 100%;
 }
-.linear4{
+.linear4 {
     background: linear-gradient(45deg, #fb3 50%, #58a 50%);
     background-size: 30px 30px;
 }
-.linear5{
+.linear5 {
     background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
     background-size: 30px 30px;
 }
-.linear6{
+.linear6 {
     background: repeating-linear-gradient(60deg, #fb3 0, #fb3 15px, #58a 0, #58a 30px)
 }
-.linear7{
+.linear7 {
     background-image: linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0),
     linear-gradient(rgba(200, 0, 0, .5) 50%, transparent 0);
     background-size: 30px 30px;    
 }
-.linear8{
+.linear8 {
     background-color: #58a;
     background-image: linear-gradient(white 2px, transparent 0),
     linear-gradient(90deg, white 2px, transparent 0),
@@ -57,7 +77,7 @@
     background-size: 75px 75px, 75px 75px,
     15px 15px, 15px 15px;    
 }
-.linear9{
+.linear9 {
     background: linear-gradient(45deg, #d54040 25%, transparent 0),
     linear-gradient(45deg, transparent 75%, #d54040 0),
     linear-gradient(45deg, #d54040 25%, transparent 0),
@@ -66,14 +86,14 @@
     15px 15px, 30px 30px;
     background-size: 30px 30px;
 }
-.radial{
+.radial {
     background-color: #655;
     background-image: radial-gradient(tan 30%, transparent 0),
     radial-gradient(tan 30%, #655 35%, transparent 0); /* 30%前景色-35%背景色防止锯齿化 */
     background-size: 30px 30px;
     background-position: 0 0, 15px 15px;
 }
-.linear-border{
+.border-linear {
     border: 16px solid transparent;
     border-image: 16 repeating-linear-gradient(
         -45deg, red 0, red 1em,
@@ -85,9 +105,49 @@
 @keyframes ants {
     to { background-position: 100% }
 }
-.linear-border2{
+.border-linear2 {
     border: 1px solid transparent;
     background: linear-gradient( white, white ) padding-box,
     repeating-linear-gradient(-45deg, black 0, black 25%, white 0, white 50%) 0 / 10px 10px; /* linear白色遮挡 */
     animation: ants 12s linear infinite;
+}
+.radius {
+    border-radius: 50% / 100% 100% 0 0;
+}
+.radius2 {
+    border-radius: 100% 0 0 0;
+}
+.rhomboid {
+    position: relative;
+
+    text-align: center;
+}
+.rhomboid::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    background-color: #58a;
+
+    transform: skew(-20deg);
+
+    content: '';
+}
+.picture {
+    float: left;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+
+    transition: 1s clip path;
+}
+.picture:hover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.trapezoid {
+    border-radius: 1em 1em 0 0;
+
+    transform: perspective(1.5em) rotateX(2deg);
+    transform-origin: left bottom;
 }
