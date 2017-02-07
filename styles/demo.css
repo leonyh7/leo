@@ -57,10 +57,37 @@
     background-size: 75px 75px, 75px 75px,
     15px 15px, 15px 15px;    
 }
+.linear9{
+    background: linear-gradient(45deg, #d54040 25%, transparent 0),
+    linear-gradient(45deg, transparent 75%, #d54040 0),
+    linear-gradient(45deg, #d54040 25%, transparent 0),
+    linear-gradient(45deg, transparent 75%, #d54040 0);
+    background-position: 0 0, 15px 15px,
+    15px 15px, 30px 30px;
+    background-size: 30px 30px;
+}
 .radial{
     background-color: #655;
     background-image: radial-gradient(tan 30%, transparent 0),
     radial-gradient(tan 30%, #655 35%, transparent 0); /* 30%前景色-35%背景色防止锯齿化 */
     background-size: 30px 30px;
     background-position: 0 0, 15px 15px;
+}
+.linear-border{
+    border: 16px solid transparent;
+    border-image: 16 repeating-linear-gradient(
+        -45deg, red 0, red 1em,
+        transparent 0, transparent 2em,
+        #58a 0, #58a 3em,
+        transparent 0, transparent 4em        
+    );
+}
+@keyframes ants {
+    to { background-position: 100% }
+}
+.linear-border2{
+    border: 1px solid transparent;
+    background: linear-gradient( white, white ) padding-box,
+    repeating-linear-gradient(-45deg, black 0, black 25%, white 0, white 50%) 0 / 10px 10px; /* linear白色遮挡 */
+    animation: ants 12s linear infinite;
 }
