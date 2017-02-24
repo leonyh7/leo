@@ -4,10 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>demo</title>
-    <link rel="stylesheet" href="styles/demo.css">
+    <link rel="stylesheet" href="./demo.css">
 </head>
 
 <body>
+    <ul class="tan link">
+        <li>
+            <a href="./modal.html">modal</a>
+        </li>
+    </ul>
+
     <div class="tan outline"></div>
 
     <div class="tan border"></div>
@@ -35,10 +41,98 @@
 
 
     <img class="picture" src="http://csssecrets.io/images/adamcatlace.jpg" alt="">
+    <div class="tan picture2"></div>
 
     <div class="tan blue trapezoid"></div>
 
-    <!--<script src="bundle.js"></script>-->
+    <div class="square pie"></div>
+
+    <div class="tan yellow shadow"></div>
+    <div class="tan yellow shadow2"></div>
+
+    <div class="tan glass">
+        <main>
+            <blockquote>
+                The only way to get rid of a temptation is to yield it.
+            </blockquote>
+        </main>
+    </div>
+
+    <div class="tan note">
+        <dl>
+            <dt>Name:</dt>
+            <dd>Niuyh</dd>
+
+            <dt>Email:</dt>
+            <dd>912661484@qq.com</dd>
+
+            <dt>Location:</dt>
+            <dd>Huzhou</dd>
+        </dl>
+    </div>
+
+    <div class="tan text-striped">
+        Common ligatures: fi ff fl ffi ffl Discretionary ligatures: st ct The only way to get rid of a temptation is to yield it.
+    </div>
+
+    <div class="tan black text">
+        The only way to get rid of a temptation is to yield it.
+    </div>
+
+    <div class="tan circular">
+        <svg viewBox="0 0 100 100">
+            <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+            <text>
+                <textPath xlink:href="#circle">
+                    circular reasoning works because svg.
+                </textPath>
+            </text>
+        </svg>
+    </div>
+    
+    <ul class="tan scroll">	
+        <li>Ada Catlace</li>	
+        <li>Alan Purring</li>
+        <li>Schrödingcat</li>
+        <li>Tim Purrners-Lee</li>
+        <li>Webkitty</li>	
+        <li>Json</li>
+        <li>Void</li>
+        <li>Neko</li>	
+        <li>NaN</li>
+        <li>Cat5</li>
+        <li>Vector</li>
+    </ul>
+
+    <div class="img-slider">
+        <div id="sliderContent">
+            <img src="http://csssecrets.io/images/tiger.jpg" alt="Before">
+        </div>
+        <img src="http://csssecrets.io/images/adamcatlace.jpg" alt="After">
+        <input type="range" min="0" max="100" id="range">
+    </div>
+    <div class="content-center">
+        <p>Let’s assume we have some text here. Bacon ipsum dolor sit amet turkey veniam shankle, culpa short ribs kevin t-bone occaecat.</p>
+        <figure>
+            <img src="http://csssecrets.io/images/adamcatlace.jpg">
+            <figcaption>
+                The great Sir Adam Catlace was named after Countess Ada Lovelace, the first programmer ever.
+            </figcaption>
+        </figure>
+        <p>We also have some more text here. Et laborum venison nostrud, ut veniam sint kielbasa ullamco pancetta.</p>
+    </div>
+
+    <script>
+        function $(sel) {
+            return document.querySelector(sel);
+        }
+        var slider = $("#sliderContent"),
+            range = $("#range");
+        range.oninput = () => {
+            slider.style.width = range.value + "%";
+        };
+    </script>
+
 </body>
 
 </html>
