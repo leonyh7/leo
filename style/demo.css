@@ -164,7 +164,7 @@ a {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 .picture2 {
-    background-image: url("http://csssecrets.io/images/tiger.jpg");
+    background-image: url("./img/tiger.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -223,7 +223,7 @@ a {
 /*毛玻璃效果*/
 .glass,
 .glass > main::before{
-    background: url("http://csssecrets.io/images/tiger.jpg") 0 / cover fixed;
+    background: url("./img/tiger.jpg") 0 / cover fixed;
 }
 .glass > main{
     position: relative;

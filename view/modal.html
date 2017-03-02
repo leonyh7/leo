@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="./demo.css">
 </head>
 
-<body class="modal2">
-    <main id="content">
-        <a href="./index.html">return</a><button type="button" id="dialog">Show dialog</button>
+<body class="modal">
+    <dialog>O HAI, I’m a dialog. Click on me to dismiss.</dialog>
+    <main>
+        <button>Show dialog</button>
         <p>Bacon ipsum dolor sit amet consectetur short loin ut tri-tip alcatra ground round jowl beef meatloaf in pork. Elit
             chicken ea spare ribs. Shank andouille ex boudin picanha turkey esse. Do doner fugiat tongue.
         </p>
@@ -40,14 +41,25 @@
             return document.querySelector(sel);
         }
 
-        var dialog = $('#dialog');
-        var main = $('#content');
+        var dialog = $('dialog');
+        var main = $('main');
+
+        $('button').onclick = () => {
+
+            dialog.setAttribute('open', '');
+
+            main.classList.add('de-emphasized');
+        }
 
         dialog.onclick = () => {
-            main.classList.add('open');
-        }
-        main.onclick = () => {
-            main.classList.remove('open');
+            if (dialog.close) {
+                dialog.close();
+            }
+            else {
+                dialog.removeAttribute('open');
+            }
+
+            main.classList.remove('de-emphasized');
         }
     </script>
 </body>
